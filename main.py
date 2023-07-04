@@ -7,5 +7,17 @@ from Engine import *
 from Player import *
 
 if __name__ == "__main__":
-    eng = Engine()
+
+    eng = Engine(
+        rounds=5,
+        spoints=0,
+        pwn=4,
+        pwp=2,
+        plp=4,
+        pln=2,
+        player_1=CustomPlayer,
+        player_2=RandomPlayer
+    )
+
+    eng.run()
 
