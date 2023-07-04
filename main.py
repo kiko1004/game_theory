@@ -15,8 +15,8 @@ if __name__ == "__main__":
         pwp=2,
         plp=4,
         pln=2,
-        player_1=CustomPlayer,
-        player_2=RandomPlayer
+        player_1=CopyPlayer,
+        player_2=CustomPlayer
     )
 
     eng.run()

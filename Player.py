@@ -40,6 +40,14 @@ class Socializer(Player):
     def make_decision(self, **kwargs):
         super().make_decision(True)
 
+class CopyPlayer(Player):
+    def make_decision(self, **kwargs):
+        previous_decision = kwargs['previous_decision']
+        if previous_decision == True:
+            super().make_decision(True)
+        else:
+            super().make_decision(False)
+
 
 class Killer(Player):
     def make_decision(self, **kwargs):
