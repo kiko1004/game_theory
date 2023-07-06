@@ -9,14 +9,14 @@ from Player import *
 if __name__ == "__main__":
 
     eng = Engine(
-        rounds=5,
+        rounds=100,
         spoints=0,
         pwn=4,
         pwp=2,
         plp=4,
         pln=2,
-        player_1=CopyPlayer,
-        player_2=CustomPlayer
+        player_1=RandomPlayer,
+        player_2=RevengefulPlayer
     )
 
     eng.run()
