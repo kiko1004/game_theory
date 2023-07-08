@@ -22,16 +22,16 @@ class Player:
     def outcome(self, win: bool):
         positive = self.positive
         if positive and win:
-            print(f"{self.name} wins with a positive decision!")
+            # print(f"{self.name} wins with a positive decision!")
             self.points += self.pwp
         elif positive and not win:
-            print(f"{self.name} loses with a positive decision!")
+            # print(f"{self.name} loses with a positive decision!")
             self.points -= self.plp
         elif not positive and win:
-            print(f"{self.name} wins with a negative decision!")
+            # print(f"{self.name} wins with a negative decision!")
             self.points += self.pwn
         elif not positive and not win:
-            print(f"{self.name} loses with a negative decision!")
+            # print(f"{self.name} loses with a negative decision!")
             self.points -= self.pln
 
 

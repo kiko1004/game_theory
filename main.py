@@ -8,12 +8,14 @@ from Player import *
 
 if __name__ == "__main__":
 
-    eng = Engine(
-        # added dictionary unpacking
-        **config.get_conf(),
-        player_1=RandomPlayer,
-        player_2=RevengefulPlayer
-    )
-
-    eng.run()
+    players = {
+        "Socializer": Socializer,
+        "CooperativePlayer": CooperativePlayer,
+        "RevengefulPlayer": RevengefulPlayer,
+        "AggressivePlayer": AggressivePlayer,
+        "CopyPlayer": CopyPlayer,
+        "Killer": Killer,
+        "RandomPlayer": RandomPlayer
+    }
+    
 

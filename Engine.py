@@ -71,10 +71,11 @@ class Engine:
             self.decision_stage()
             self.calculation()
             self.previous_decisions = [self.player_1.positive, self.player_2.positive]
-            print("-------------------------------------")
 
-        print(f"{self.player_1.name} has total points of {self.player_1.points}")
-        print(f"{self.player_2.name} has total points of {self.player_2.points}")
+        # print(f"{self.player_1.name} has total points of {self.player_1.points}")
+        # print(f"{self.player_2.name} has total points of {self.player_2.points}")
+
+        return self.player_1.points, self.player_2.points
 
 
 
