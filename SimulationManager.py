@@ -1,6 +1,13 @@
+import datetime
+
 from Engine import *
 from Config import Config
+import uuid
 
+def print_and_return(*args):
+    args = [str(i) for i in args]
+    print(*args)
+    return " ".join(args)+"\n"
 
 class SimulationManager:
     def __init__(self, players: dict, config: Config):
@@ -24,6 +31,12 @@ class SimulationManager:
         return eng.run()
 
     def run(self):
+        results = "Input:\n"
+        conf = self.config.get_conf()
+        for key in conf:
+            results += f"{key}: {conf[key]}\n"
+        results += "\n-----------------\nOutput:\n"
+
         p = list(self.players.keys())
         for _ in range(len(p)):
             p1 = p.pop(0)
@@ -38,6 +51,11 @@ class SimulationManager:
                 print(p2, "now has", self.ranklist[p2])
         print("---------------------------------")
         for player in self.ranklist.keys():
-            print(player, "has", self.ranklist[player], "points")
+            results += print_and_return(player, "has", self.ranklist[player], "points")
+        filename = str(datetime.datetime.now())
+        filename = filename.replace(" ", "_").replace(":", "_") + ".txt"
+        with open(filename, "w") as file:
+            file.write(results)
+
 
 
