@@ -1,8 +1,5 @@
 from Engine import *
-from Config import Config, config
-
-from Player import *
-
+from Config import Config
 
 
 class SimulationManager:
@@ -13,7 +10,7 @@ class SimulationManager:
 
     def create_ranklist(self):
         self.ranklist = {}
-        for player in players.keys():
+        for player in self.players.keys():
             self.ranklist[player] = 0
 
     def run_simulation(self, player_1, player_2):
@@ -27,7 +24,7 @@ class SimulationManager:
         return eng.run()
 
     def run(self):
-        p = self.players.keys()
+        p = list(self.players.keys())
         for _ in range(len(p)):
             p1 = p.pop(0)
             for p2 in p:
@@ -39,8 +36,8 @@ class SimulationManager:
                 self.ranklist[p2] += res_p2
                 print(p1, "now has", self.ranklist[p1])
                 print(p2, "now has", self.ranklist[p2])
-
+        print("---------------------------------")
         for player in self.ranklist.keys():
-            print(player, "-", self.ranklist[player])
+            print(player, "has", self.ranklist[player], "points")
 
 

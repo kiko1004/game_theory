@@ -1,10 +1,6 @@
-# 2 players
-# bank?
-# complex logic
-# final aim - simulation
 from Config import config
-from Engine import *
 from Player import *
+from SimulationManager import SimulationManager
 
 if __name__ == "__main__":
 
@@ -17,5 +13,8 @@ if __name__ == "__main__":
         "Killer": Killer,
         "RandomPlayer": RandomPlayer
     }
-    
+
+    sim = SimulationManager(players, config)
+    sim.run()
+
 
