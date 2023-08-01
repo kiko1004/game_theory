@@ -1,6 +1,5 @@
-from pick import pick
-
 import random
+import pandas
 
 
 class Player:
