@@ -1,6 +1,6 @@
 # What is this project about
 
-This is a game theory simulation.
+This is a game theory simulation. Designed for teaching students OOP.
 
 # How to use?
 
@@ -16,6 +16,7 @@ This is a game theory simulation.
   "plp": 4,
   "pln": 0
 }
-``` 
+```
+3. Run `main.py`
 
 
